@@ -11,7 +11,7 @@
 
 # Build stage
 FROM alpine:3.15 AS build
-ENV RELEASE_URL="https://github.com/open-metadata/OpenMetadata/releases/download/1.1.1-release/openmetadata-1.1.1.tar.gz"
+ENV RELEASE_URL="https://github.com/surenganne/OpenMetadata/releases/download/1.1.1-release/openmetadata-1.1.1.tar.gz"
 RUN mkdir -p /opt/openmetadata && \
     wget ${RELEASE_URL} && \
     tar zxvf openmetadata-*.tar.gz -C /opt/openmetadata --strip-components 1 && \
@@ -27,7 +27,7 @@ LABEL org.open-metadata.vendor="OpenMetadata"
 LABEL org.open-metadata.release-version="1.1.1"
 LABEL org.open-metadata.description="OpenMetadata is an open source platform for metadata management and discovery."
 LABEL org.open-metadata.url="https://open-metadata.org/"
-LABEL org.open-metadata.vcs-url="https://github.com/open-metadata/OpenMetadata"
+LABEL org.open-metadata.vcs-url="https://github.com/surenganne/OpenMetadata"
 LABEL org.open-metadata.build-date=$BUILD_DATE
 LABEL org.open-metadata.commit-id=$COMMIT_ID
 
